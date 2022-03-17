@@ -6,4 +6,4 @@ from django.template import loader
 
 # Create your views here.
 def inicio(request):
-    return HttpResponse('Bienvenidos a la Web de la Escuela Fenix')
+    return render(request,'indice/index.html',{})
