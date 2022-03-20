@@ -11,4 +11,3 @@ urlpatterns = [
 
 
 
-#https://github.com/pangolp/epet.git
