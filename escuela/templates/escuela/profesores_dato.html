@@ -1,0 +1,21 @@
+{% extends 'indice/index.html' %}
+
+{% block header_index %}
+{% endblock header_index %}
+
+{% block Template %}
+
+<p>
+    <a href={% url 'profesores' %}>Volver</a>
+</p>
+    
+<p>
+    <li>Nombre:  {{object.nombre}}</li>
+    <li>Apellido: {{object.apellido}}</li>
+    <li>Email: {{object.email}}</li>
+    <li>Disciplina: {{object.disciplina}}</li>
+    <li>Tarjeta de Presentación: {{object.tarjeta_presentacion| safe}}</li>
+    <li>Fecha de Creación: {{object.fecha_creacion}} </li>
+</p>
+
+{% endblock Template %}

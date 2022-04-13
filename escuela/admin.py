@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Nivel_Inicial, Primaria, Secundaria
+from .models import Profesores, Alumno
 
 # Register your models here.
-admin.site.register(Nivel_Inicial)
-admin.site.register(Primaria)
-admin.site.register(Secundaria)
+admin.site.register(Alumno)
+admin.site.register(Profesores)
+

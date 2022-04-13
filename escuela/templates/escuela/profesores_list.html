@@ -1,0 +1,22 @@
+{% extends 'indice/index.html' %}
+
+{% block header_index %}
+
+    <p>
+        <a href={% url 'crear_profesor' %}>Crear Profesor</a>
+    </p>
+
+{% endblock header_index %}
+
+{% block Template %}
+
+     
+    {% for profesor in lista_profesores %}
+        <li>   
+            <a href={% url 'profesores_detalle' profesor.id %}>{{profesor}}</a> |
+            <a href={% url 'profesores_editar' profesor.id %}>Editar</a> |
+            <a href={% url 'profesores_borrar' profesor.id %}>Borrar</a>
+        </li>
+    {% endfor %}
+
+{% endblock Template %}
