@@ -1,0 +1,22 @@
+{% extends 'indice/index.html' %}
+
+{% block header_index %}
+{% endblock header_index %}
+
+{% block Template %}
+
+<p>
+    {% if msj %}
+        {{msj}}
+    {% endif %}
+</p>
+
+<form action={% url 'editar_usuario' %} method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <button>Guardar cambios</button>
+</form>
+
+{% endblock Template %}

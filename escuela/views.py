@@ -63,7 +63,6 @@ def lista_profesores(request):
     )
 
 
-
 class ProfesorDetalle(DetailView):
     model = Profesores
     template_name = 'escuela/profesores_dato.html'
@@ -71,18 +70,18 @@ class ProfesorDetalle(DetailView):
     
 class ProfesorEditar(UpdateView):
     model = Profesores
-    success_url = '/escuela/profesores_list.html'
+    success_url = '/escuela/profesores_list'
     template_name = 'escuela/profesores_form.html'
-    fields = ['nombre', 'apellido', 'email']
+    fields = ['nombre', 'apellido', 'email', 'disciplina', 'tarjeta_presentacion']
 
 
 class CrearProfesor(CreateView):
     model = Profesores
-    success_url = '/escuela/profesores_list.html'
+    success_url = '/escuela/profesores_list'
     fields = ['nombre', 'apellido']
 
 
 class BorrarProfesor(DeleteView):
     model = Profesores
-    success_url = '/escuela/profesores_list.html'
+    success_url = '/escuela/profesores_list'
     
