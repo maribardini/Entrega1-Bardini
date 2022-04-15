@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import AlumnoForm, BusquedaAlumno, ProfesorFormulario
 from .models import Alumno, Profesores
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -12,7 +12,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def escuela(request):
     return render(request,'escuela.html')
 
-@login_required
 def formulario_alumnos(request):
     if request.method == 'POST':
         formulario = AlumnoForm(request.POST)
@@ -38,7 +37,8 @@ def busqueda_alumno(request):
     return render(request, "escuela/busqueda_alumno.html",
 
         {'buscador': buscador, 'alumnos_buscados': alumnos_buscados, 'dato': dato})
-   
+
+@login_required
 def crear_profesor(request):
     
     if request.method == 'POST':
@@ -49,7 +49,7 @@ def crear_profesor(request):
             profesor = Profesores(nombre=data['nombre'], apellido=data['apellido'], tarjeta_presentacion=data['tarjeta_presentacion'])
             profesor.save()
             return render(request, "indice/index.html", {})
-            # return redirect(escuela)
+            # return redirect('indice')
     
     form = ProfesorFormulario()
     return render(request, "escuela/crear_profesor.html", {'form': form})
@@ -68,20 +68,15 @@ class ProfesorDetalle(DetailView):
     template_name = 'escuela/profesores_dato.html'
     
     
-class ProfesorEditar(UpdateView):
+class ProfesorEditar(LoginRequiredMixin, UpdateView):
     model = Profesores
     success_url = '/escuela/profesores_list'
     template_name = 'escuela/profesores_form.html'
     fields = ['nombre', 'apellido', 'email', 'disciplina', 'tarjeta_presentacion']
 
 
-class CrearProfesor(CreateView):
-    model = Profesores
-    success_url = '/escuela/profesores_list'
-    fields = ['nombre', 'apellido']
 
-
-class BorrarProfesor(DeleteView):
+class BorrarProfesor(LoginRequiredMixin,DeleteView):
     model = Profesores
     success_url = '/escuela/profesores_list'
     

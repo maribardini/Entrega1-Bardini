@@ -9,4 +9,7 @@ def inicio (request):
 def about (request):
     return render(request, "indice/about.html", {})
 
+def pages (request):
+    return render(request, "indice/pages.html", {})
+
 

@@ -18,8 +18,4 @@ class ProfesorFormulario(forms.Form):
     apellido = forms.CharField(max_length=30)
     email = forms.EmailField()    
     disciplina = forms.CharField(max_length=30)
-    # fecha_creacion = format_stack.DateTimeField(default=timezone.now)
     tarjeta_presentacion = RichTextFormField(required=False)
-
-# class ProfesoresBusqueda(forms.Form):
-#     nombre = forms.CharField(max_length=20)
