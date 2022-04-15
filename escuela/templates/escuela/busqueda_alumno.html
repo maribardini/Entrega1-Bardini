@@ -1,6 +1,11 @@
 {% extends 'indice/index.html' %}
 
 {% block header_index %}
+    <h6>
+        Ingrese el Nombre del alumno que </br>
+        desea encontrar en la base de datos.
+    </h6>
+
 {% endblock header_index %}
 
 {% block Template %}
@@ -25,5 +30,5 @@
     {% else %}
         Todavía no se realizó la búsqueda.
     {% endif %}
-    
+
 {% endblock Template %}

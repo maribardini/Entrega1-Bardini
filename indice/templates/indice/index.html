@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         {% block bloque_head %}
         {% endblock bloque_head %}
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Escuela de Arte 'Fenix'</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -25,19 +25,11 @@
                 <a class="navbar-brand" href= "{% url 'inicio' %}" >Home</a>
                 <a class="navbar-brand" href= "{% url 'about' %}" >Acerca de mi</a>
                 <a class="navbar-brand" href= "{% url 'pages' %}" >Blogs</a>
-                {% comment %} <a class="navbar-brand" href={% url 'formulario_alumnos' %}>Crear Alumno</a>
-                <a class="navbar-brand" href={% url 'busqueda_alumno' %}>Buscar Alumno</a>
-                <a class="navbar-brand" href={% url 'profesores_list' %}>Profesores</a> {% endcomment %}
-                {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
                     <a class="navbar-brand" href={% url 'usuario_datos' %}>
                         {{request.user.username}}
                     </a>
                     <a class="navbar-brand" href={% url 'login' %}>Ingresar</a>
-                {% comment %} {% else %} {% endcomment %}
                     <a class="navbar-brand" href={% url 'logout' %}>Salir</a>
-                 {% comment %}   <a class="navbar-brand" href={% url 'registrar' %}>Crear Usuario Profesor</a>
-                {% comment %}{% endif %} {% endcomment %}
-
             </div>
         </nav>
         <!-- Masthead-->
@@ -52,7 +44,7 @@
                                 {% if msj %}
                                     {{msj}}
                                 {% else %}
-                                    Escuela de Arte FENIX
+                                    Escuela de Arte "FENIX"
                                 {% endif %}
                             </h1>
                         </div>
