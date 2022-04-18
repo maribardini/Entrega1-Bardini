@@ -28,6 +28,7 @@
                     <a class="navbar-brand" href={% url 'usuario_datos' %}>
                         {{request.user.username}}
                     </a>
+                    <a class="navbar-brand" href={% url 'registrar' %}>Registrarse</a>
                     <a class="navbar-brand" href={% url 'login' %}>Ingresar</a>
                     <a class="navbar-brand" href={% url 'logout' %}>Salir</a>
             </div>
@@ -63,13 +64,7 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">Acerca de nosotros</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Términos</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Política de Privacidad</a></li>
+                            <li> <a>Autora del sitio: Marianela Bardini</a></li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
                     </div>
