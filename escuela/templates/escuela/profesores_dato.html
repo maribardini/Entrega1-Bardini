@@ -16,6 +16,9 @@
     <li>Disciplina: {{object.disciplina}}</li>
     <li>Tarjeta de Presentación: {{object.tarjeta_presentacion| safe}}</li>
     <li>Fecha de Creación: {{object.fecha_creacion}} </li>
+    {% if object.foto %}.
+    <li>Foto: <img src="{{object.foto.url}}" alt="foto" height='55px'></li>
+    {%endif%}
 </p>
 
 {% endblock Template %}

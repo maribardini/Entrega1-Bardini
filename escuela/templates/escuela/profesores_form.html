@@ -9,9 +9,10 @@
         <a href={% url 'profesores_list' %}>Volver</a>
     </p>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype='multipart/form-data'>
         {% csrf_token %}
         <table>
+            {{form.media}}
             {{form.as_table}}
         </table>
         <button>Editar</button>

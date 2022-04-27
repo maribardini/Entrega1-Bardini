@@ -16,6 +16,7 @@ class Profesores(models.Model):
     apellido = models.CharField(max_length=30)
     email = models.EmailField(null=True)
     disciplina = models.CharField(max_length=30,null=True)
+    foto = models.ImageField(upload_to='avatar',blank=True, null=True)
     tarjeta_presentacion = RichTextField(blank=True, null=True)
     fecha_creacion = models.DateTimeField(default=timezone.now)
 

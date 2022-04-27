@@ -46,7 +46,7 @@ def crear_profesor(request):
         
         if form.is_valid():
             data = form.cleaned_data
-            profesor = Profesores(nombre=data['nombre'], apellido=data['apellido'], tarjeta_presentacion=data['tarjeta_presentacion'])
+            profesor = Profesores(nombre=data['nombre'], apellido=data['apellido'], tarjeta_presentacion=data['tarjeta_presentacion'], foto=data['foto'], disciplina=data['disciplina'], email=data['email'])
             profesor.save()
             return render(request, "indice/index.html", {})
             # return redirect('indice')
@@ -71,9 +71,8 @@ class ProfesorDetalle(DetailView):
 class ProfesorEditar(LoginRequiredMixin, UpdateView):
     model = Profesores
     success_url = '/escuela/profesores_list'
-    template_name = 'escuela/profesores_form.html'
-    fields = ['nombre', 'apellido', 'email', 'disciplina', 'tarjeta_presentacion']
-
+    # template_name = 'escuela/profesores_form.html'
+    fields = ['nombre', 'apellido', 'email', 'disciplina', 'foto', 'tarjeta_presentacion']
 
 
 class BorrarProfesor(LoginRequiredMixin,DeleteView):

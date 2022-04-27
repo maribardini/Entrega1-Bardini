@@ -12,16 +12,20 @@
 
 
 <p>
-    <li>{{request.user.first_name}}</li>
-    <li>{{request.user.last_name}}</li>
-    <li>{{request.user.email}}</li>
+    <li>Nombre: {{request.user.first_name}}</li>
+    <li>Apellido: {{request.user.last_name}}</li>
+    <li>Email: {{request.user.email}}</li>
+    <li>Link: {{request.user.userextension.link}}</li>
+    <li>Más detalles: {{request.user.userextension.more_description}}</li>
     {%if request.user.userextension.avatar%}
-    <li><img src="{{request.user.userextension.avatar.url}}" alt="imagen de perfil"></li>
+    <li>Foto: <img src="{{request.user.userextension.avatar.url}}" alt="imagen de perfil" height='55px'</li>
     {%endif%}
-    <li>{{request.user.userextension.link}}</li>
+
+    
 </p>
    
 
 <a href={% url 'editar_usuario' %}>Editar datos</a>
+
 
 {% endblock Template %}

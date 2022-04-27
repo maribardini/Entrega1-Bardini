@@ -41,7 +41,7 @@ def registrar (request):
         
     
     form = MiCreacionUser()
-    return render(request,'accounts/registrar.html', {'form':form, 'msj': ''})
+    return render(request,'accounts/registrar.html', {'form':form})
 
 
 @login_required

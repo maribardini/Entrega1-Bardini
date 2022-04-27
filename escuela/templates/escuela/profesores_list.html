@@ -3,8 +3,7 @@
 {% block header_index %}
 
     <h6>
-        Señor Profesor, cree su usuario para poder obtener los permisos para navegar </br>
-        por la página y modificar sus datos.
+        Crear Profesor para agregarlo al staff.
         
     </h6>
 
@@ -16,7 +15,7 @@
 
 {% block Template %}
 
-     
+{% if lista_profesores %}
     {% for profesor in lista_profesores %}
         <li>   
             <a href={% url 'profesores_detalle' profesor.id %}>{{profesor}}</a> |
@@ -24,7 +23,9 @@
             <a href={% url 'profesores_borrar' profesor.id %}>Borrar</a>
         </li>
     {% endfor %}
-
+{%else%}
+    <p>No hay páginas aún</p>
+{%endif%}
 
 
 {% endblock Template %}

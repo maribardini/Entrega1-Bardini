@@ -16,6 +16,7 @@ class BusquedaAlumno(forms.Form):
 class ProfesorFormulario(forms.Form):
     nombre = forms.CharField(max_length=20)
     apellido = forms.CharField(max_length=30)
-    email = forms.EmailField()    
+    email = forms.EmailField()  
+    foto = forms.ImageField(required=False)  
     disciplina = forms.CharField(max_length=30)
     tarjeta_presentacion = RichTextFormField(required=False)

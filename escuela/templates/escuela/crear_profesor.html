@@ -5,7 +5,11 @@
 
 {% block Template %}
 
-    <form action ={% url 'crear_profesor' %} method="post">
+<p>
+    <a href={% url 'profesores_list' %}>volver</a>
+</p>
+
+    <form action ='' method="post">
         {% csrf_token %}
         <table>
             {{form.media}}
@@ -15,3 +19,5 @@
     </form>
 
 {% endblock Template %}
+
+{% comment %} <form action ={% url 'crear_profesor' %} method="post"> {% endcomment %}
